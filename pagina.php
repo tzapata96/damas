@@ -4,7 +4,7 @@ $_SESSION['usuario']=$_REQUEST['usuario']; // variable de entorno que se ve en t
 $_SESSION['contraseña']=$_REQUEST['contraseña'];
 $conexion=mysqli_connect("localhost","root","") or die("Problemas en la conexion");
 
-mysqli_select_db($conexion,"login") or die("Problemas en la seleccion de la base de datos");
+mysqli_select_db($conexion,"damas") or die("Problemas en la seleccion de la base de datos");
 
 //echo "select id from usuario where Usuario='".$_SESSION['usuario']."' and Contraseña='".$_SESSION['contraseña']."'";
 
