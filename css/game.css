@@ -16,6 +16,7 @@ body{
 .hero .container{
     padding: 0px;
 }
+
 .nav{
 display: flex;
 justify-content: flex-end;
@@ -31,6 +32,9 @@ height: 70px;
 align-items:flex-start;
 border: 2px solid blue;
 }
+
+
+
 .user .logo_user{
     display: block;
     width: 100px;
@@ -44,6 +48,11 @@ border: 2px solid blue;
     margin-top: 0px;
 }
 
+.user p{
+    color: white;
+    font-size: 30px;
+}
+
 .nav__items{
     color: #fff;
     text-decoration: none;
@@ -55,6 +64,67 @@ border: 2px solid blue;
 
 .nav__items--1{
     border: 1px solid #fff;
+}
+.nav_users{
+    width: 90%;
+    right: inherit;
+    display: inline-block;
+}
+.users{
+    list-style: none;
+    display: block;
+    float: left;
+    width: 20%;
+}
+.users li a{
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+}
+.users li a:hover{
+    background-color:#4343 ;
+}
+
+.users li ul{
+    display: none;
+    position: absolute;
+    min-width: 200px;
+}
+
+.users li:hover > ul{
+    display: block;
+
+}
+.nav_invitation{
+    width: 300px;
+    display: inline-block;
+}
+.invitation{
+    list-style: none;
+    display: block;
+    float: right;
+    width: 20%;
+}
+.invitation li a{
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+}
+.invitation li a:hover{
+    background-color:#4343 ;
+}
+
+.invitation li ul{
+    display: none;
+    position: absolute;
+    min-width: 200px;
+}
+
+.invitation li:hover > ul{
+    display: block;
+
 }
 
 #tablero{

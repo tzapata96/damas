@@ -24,6 +24,25 @@ height: 70px;
 align-items: center;
 font-weight: 700;
 }
+
+.partida{
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.turno{
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+    height: 75px;
+    align-items:flex-start;
+    border: 2px solid blue;
+    margin: 0 auto;
+
+}
+
 .user{
 display: flex;
 justify-content: flex-start;
@@ -31,24 +50,18 @@ width: 250px;
 height: 70px;
 align-items:flex-start;
 border: 2px solid blue;
+float: left;
 }
-.user .logo_user{
-    display: block;
-    width: 100px;
-    height: 100px;
-}
+.user2{
+    display: flex;
+    justify-content: flex-start;
+    width: 250px;
+    height: 70px;
+    align-items:flex-start;
+    border: 2px solid blue;
+    float: right;
+    }
 
-.user .logo_user img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-top: 0px;
-}
-.user p{
-    color: white;
-    font-size: 30px;
-
-}
 
 .nav__items{
     color: #fff;
@@ -63,10 +76,7 @@ border: 2px solid blue;
     border: 1px solid #fff;
 }
 
-.partida{
-    width: 100%;
-    background-color: red;
-}
+
 
 .users_conect{
     width: 700px;
@@ -155,6 +165,55 @@ border: 2px solid blue;
     background-color: #888;
  
 }
+:root{
+    --w-moneda: 150px;
+    --h-moneda: 150px;
+}
 
+*{
+    transition: all 1s;
+    box-sizing: border-box;
+}
+
+.contenedor{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.moneda,.lados{
+   
+    width: var(--w-moneda);
+    height: var(--h-moneda);
+}
+
+.moneda{
+    position: relative;
+    transform-style: preserve-3d;
+    margin: 0 auto;
+
+}
+
+.lados{
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 400%;
+    text-shadow: 3px 3px 0px grey;
+}
+.frente{
+    background-color: rgba(240, 240, 240, .4);
+}
+
+.atras{
+    background-color: rgba(60, 60, 60, .4);
+    transform: rotateY(180deg);
+}
 
 

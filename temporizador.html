@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Temporizador</title>
+</head>
+<body>
+    <style>
+        :root{
+            --w-moneda: 250px;
+            --h-moneda: 250px;
+        }
+
+        *{
+            transition: all 1s;
+            box-sizing: border-box;
+        }
+        
+        body{
+            background-color: grey;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+
+        }
+        .contenedor{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            margin: 0 auto;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .moneda,.lados{
+           
+            width: var(--w-moneda);
+            height: var(--h-moneda);
+        }
+
+        .moneda{
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .lados{
+            backface-visibility: hidden;
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 400%;
+            text-shadow: 3px 3px 0px grey;
+        }
+        .frente{
+            background-color: orange;
+        }
+    
+        .atras{
+            background-color: crimson;
+            transform: rotateY(180deg);
+        }
+
+     
+        
+    </style>
+
+    <div class="contenedor">
+        <div class="moneda" id="moneda">
+            <div class="lados frente" id="frente"></div>
+            <div class="lados atras" id="atras"></div>
+        </div>
+    </div>
+
+    <script>
+        let tiempo = 10;
+        let contador = 0;
+
+        let contando = 0;
+        
+        temporizar();
+        
+        function temporizar(){
+            let t = tiempo-contador;
+            let contando = t > 0;
+            if(contador%2==0){
+                select_id('frente').innerHTML = t;
+            }else{
+                select_id('atras').innerHTML = t;
+            }
+            select_id("moneda").style.transform = `rotateY(${180*contador}deg)`
+            if (contando){
+                contador++;
+                setTimeout(() => {
+                    temporizar();
+                },1000);
+            }else{
+                suspender();
+            }
+        
+        }
+
+        function suspender(){
+            contador = 0;   
+            select_id('frente').innerHTML = '0';
+            select_id('atras').innerHTML = '0';
+            temporizar()
+        }
+
+        function select_id(id){
+            return document.getElementById(id);
+        }
+    </script>
+</body>
+</html>
