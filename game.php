@@ -1,7 +1,7 @@
 <?php
 
-$_SESSION['usuario']=$_POST['username']; // variable de entorno que se ve en todas las paginas y no cambia el valor
-$_SESSION['contraseña']=$_POST['password'];
+$_SESSION['nickname']=$_POST['nickname']; // variable de entorno que se ve en todas las paginas y no cambia el valor
+$_SESSION['contraseña']=$_POST['contraseña'];
 
 class Conexion{
     private $host = "localhost";
@@ -20,7 +20,7 @@ class Conexion{
         
             $resultado = $this->conect->prepare($sql);
 
-            $resultado->execute(array($_SESSION['usuario'], $_SESSION['contraseña']));
+            $resultado->execute(array($_SESSION['nickname'], $_SESSION['contraseña']));
         
             while ($registro=$resultado->fetch(PDO::FETCH_ASSOC)){
                 $_SESSION['nickname'] = $registro['nickname'];

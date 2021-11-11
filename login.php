@@ -16,8 +16,8 @@
             <h1>Login User</h1>
 
             <form action="game.php" method="post">
-                <label for="username">Username</label>
-                <input type="text" placeholder="Enter Username" name="username">
+                <label for="nickname">Username</label>
+                <input type="text" placeholder="Enter Username" name="nickname">
                 
                 <label for="password">Password</label>
                 <input type="password" placeholder="Enter Password" name="password">
